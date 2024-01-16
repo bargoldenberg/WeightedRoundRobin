@@ -9,11 +9,11 @@ def find_turn(num_of_players, players, y, rights):
     max_value = -INF
     max_player = -1
     for i in range(num_of_players):
-            f = players[i] + y
-            value = INF if f == 0 else rights[i]/f
-            if value > max_value:
-                max_value = value
-                max_player = i
+        f = players[i] + y
+        value = INF if f == 0 else rights[i]/f
+        if value > max_value:
+            max_value = value
+            max_player = i
     return max_player
 
 def find_desired_item(max_player):
