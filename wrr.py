@@ -57,7 +57,7 @@ TESTS
 '''
 if __name__ == '__main__':
     '''
-    Explanation TEST 1 (Different Rights Different Objects)
+    Explanation TEST 1 (Different Rights Different Items)
     round 1:
         player1 = 1/(0+0.5) = 2 {1 = right, 0.5 = y}
         player2 = 2/(0+0.5) = 4
