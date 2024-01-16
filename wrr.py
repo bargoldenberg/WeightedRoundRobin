@@ -6,11 +6,11 @@
 
 INF = float('inf')
 
-def find_turn(num_of_players, players_dict, y, rights):
+def find_turn(num_of_players, players, y, rights):
     max_value = -INF
     max_player = -1
     for i in range(num_of_players):
-            f = players_dict[i] + y
+            f = players[i] + y
             value = 0
             if f == 0:
                 value = INF
@@ -36,17 +36,13 @@ def find_desired_item(max_player):
 def weighted_round_robin(rights: list[float], valuations: list[list[float]], y: float):
     num_of_players  = len(valuations)
     num_of_items = len(valuations[0])
-    players_dict = {}
+    players = [0 for _ in range(num_of_players)]
     ans = []
-
-    for i in range(num_of_players):
-        players_dict[i] = 0
-
     while num_of_items != 0:
-        max_player = find_turn(num_of_players,players_dict,y,rights)
+        max_player = find_turn(num_of_players,players,y,rights)
         [chosen_item, item_valuation] = find_desired_item(max_player)
         ans.append([max_player+1, chosen_item+1, item_valuation])
-        players_dict[max_player]+=1
+        players[max_player]+=1
         num_of_items=num_of_items-1
         print("player", max_player + 1, "takes item", chosen_item+1,"with value",item_valuation)
 
