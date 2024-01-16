@@ -1,6 +1,9 @@
 
 #IMPLEMENTED BY: BAR GOLDENBERG
 
+
+# QUESTION 2
+
 INF = float('inf')
 
 def find_turn(num_of_players, players_dict, y, rights):
