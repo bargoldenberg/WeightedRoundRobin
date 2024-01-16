@@ -39,12 +39,12 @@ def weighted_round_robin(rights: list[float], valuations: list[list[float]], y: 
     players = [0 for _ in range(num_of_players)]
     ans = []
     while num_of_items != 0:
-        max_player = find_turn(num_of_players,players,y,rights)
-        [chosen_item, item_valuation] = find_desired_item(max_player)
-        ans.append([max_player+1, chosen_item+1, item_valuation])
-        players[max_player]+=1
+        chosen_player = find_turn(num_of_players,players,y,rights)
+        [chosen_item, item_valuation] = find_desired_item(chosen_player)
+        ans.append([chosen_player+1, chosen_item+1, item_valuation])
+        players[chosen_player]+=1
         num_of_items=num_of_items-1
-        print("player", max_player + 1, "takes item", chosen_item+1,"with value",item_valuation)
+        print("player", chosen_player + 1, "takes item", chosen_item+1,"with value",item_valuation)
 
         for i in range(num_of_players):
             valuations[i][chosen_item] = None
