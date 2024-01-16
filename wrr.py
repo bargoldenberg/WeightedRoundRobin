@@ -1,6 +1,5 @@
-
 #IMPLEMENTED BY: BAR GOLDENBERG
-
+from colorama import Fore
 
 # QUESTION 2
 
@@ -89,7 +88,7 @@ if __name__ == '__main__':
     arr = weighted_round_robin(rights, valuations, y)
     assert(([[3, 5, 66], [2, 4, 55], [3, 2, 33], [1, 3, 22], [3, 1, 11]].__eq__(arr)))
     print("---------------------")
-    print("TEST NUMBER 1: SUCCESS")
+    print("TEST NUMBER 1: "+Fore.GREEN+"SUCCESS"+Fore.WHITE)
     print("---------------------")
     
 
@@ -119,7 +118,7 @@ if __name__ == '__main__':
     arr = weighted_round_robin(rights, valuations, y)
     assert([[3,1,1],[2,2,1],[3,3,1]].__eq__(arr))
     print("---------------------")
-    print("TEST NUMBER 2: SUCCESS")
+    print("TEST NUMBER 2: "+Fore.GREEN+"SUCCESS"+Fore.WHITE)
     print("---------------------")
 
     '''
@@ -148,7 +147,7 @@ if __name__ == '__main__':
     arr= weighted_round_robin(rights, valuations, y)
     assert([[1,1,1],[2,2,1],[3,3,1]].__eq__(arr))
     print("---------------------")
-    print("TEST NUMBER 3: SUCCESS")
+    print("TEST NUMBER 3: "+Fore.GREEN+"SUCCESS"+Fore.WHITE)
     print("---------------------")
 
     '''
@@ -177,5 +176,5 @@ if __name__ == '__main__':
     arr= weighted_round_robin(rights, valuations, y)
     assert([[3,2,3],[2,3,3],[3,1,1]].__eq__(arr))
     print("---------------------")
-    print("TEST NUMBER 4: SUCCESS")
+    print("TEST NUMBER 4: "+Fore.GREEN+"SUCCESS"+Fore.WHITE)
     print("---------------------")
