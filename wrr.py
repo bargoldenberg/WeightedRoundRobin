@@ -11,11 +11,7 @@ def find_turn(num_of_players, players, y, rights):
     max_player = -1
     for i in range(num_of_players):
             f = players[i] + y
-            value = 0
-            if f == 0:
-                value = INF
-            else:
-                value = rights[i]/f
+            value = INF if f == 0 else rights[i]/f
             if value > max_value:
                 max_value = value
                 max_player = i
@@ -26,28 +22,28 @@ def find_desired_item(max_player):
     chosen_item = -1
     for i in range(len(valuations[max_player])):
         player_vals = valuations[max_player]
-        if player_vals[i] == None:
-            continue
-        if player_vals[i] > item_valuation:
+        if player_vals[i] and player_vals[i] > item_valuation:
             item_valuation = player_vals[i]
             chosen_item = i
     return [chosen_item, item_valuation]
+
+def remove_item(player_items, item_to_delete):
+    player_items[item_to_delete] = None
 
 def weighted_round_robin(rights: list[float], valuations: list[list[float]], y: float):
     num_of_players  = len(valuations)
     num_of_items = len(valuations[0])
     players = [0 for _ in range(num_of_players)]
     ans = []
-    while num_of_items != 0:
+    for _ in range(num_of_items):
         chosen_player = find_turn(num_of_players,players,y,rights)
         [chosen_item, item_valuation] = find_desired_item(chosen_player)
-        ans.append([chosen_player+1, chosen_item+1, item_valuation])
-        players[chosen_player]+=1
-        num_of_items=num_of_items-1
-        print("player", chosen_player + 1, "takes item", chosen_item+1,"with value",item_valuation)
-
+        ans.append([chosen_player + 1, chosen_item + 1, item_valuation])
+        players[chosen_player] += 1
+        print("player", chosen_player + 1, "takes item", chosen_item + 1, "with value", item_valuation)
+        #remove chosen item from players valuation lists.
         for i in range(num_of_players):
-            valuations[i][chosen_item] = None
+            remove_item(valuations[i], chosen_item)
     return ans
 
 
