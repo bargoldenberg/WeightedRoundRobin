@@ -178,3 +178,29 @@ if __name__ == '__main__':
     print("---------------------")
     print("TEST NUMBER 4: "+Fore.GREEN+"SUCCESS"+Fore.WHITE)
     print("---------------------")
+    '''
+    TEST NUMBER 5 (y = 0)
+    '''
+    rights=[1,2,4]
+    valuations=[[11,11,22,33,44], [11,22,44,55,66], [11,33,22,11,66]]
+    y=0
+    print("RUNNING TEST NUMBER 5")
+    print("---------------------")
+    arr= weighted_round_robin(rights, valuations, y)
+    assert([[1,5,44],[2,4,55],[3,2,33],[3,3,22],[2,1,11]].__eq__(arr))
+    print("---------------------")
+    print("TEST NUMBER 5: "+Fore.GREEN+"SUCCESS"+Fore.WHITE)
+    print("---------------------")
+    '''
+    TEST NUMBER 6 (y = 1)
+    '''
+    rights=[1,2,4]
+    valuations=[[11,11,22,33,44], [11,22,44,55,66], [11,33,22,11,66]]
+    y=1
+    print("RUNNING TEST NUMBER 6")
+    print("---------------------")
+    arr= weighted_round_robin(rights, valuations, y)
+    assert([[3,5,66],[2,4,55],[3,2,33],[3,3,22],[1,1,11]].__eq__(arr))
+    print("---------------------")
+    print("TEST NUMBER 6: "+Fore.GREEN+"SUCCESS"+Fore.WHITE)
+    print("---------------------")
