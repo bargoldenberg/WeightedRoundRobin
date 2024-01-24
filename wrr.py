@@ -71,7 +71,7 @@ if __name__ == '__main__':
         player1 = 1/(0+0.5) = 2 {1 = right, 0.5 = y}
         player2 = 2/(0+0.5) = 4
         player3 = 4/(0+0.5) = 8
-        player 3 takes item 5 with value 33
+        player 3 takes item 5 with value 66
     round 2:
         player1 = 1/(0+0.5) = 2
         player2 = 2/(0+0.5) = 4
